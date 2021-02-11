@@ -1,0 +1,14 @@
+
+replicaCount: 2
+
+containers:
+  name: nginx
+  image: nginx:1.14.2
+
+service:
+  type: ClusterIP
+  port: 80
+  protocol: TCP
+  targetPort: 9376
+
+
