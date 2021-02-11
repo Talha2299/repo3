@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-First
+  labels:
+    env: prod
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      env: prod
+spec:
+  containers:
+    - name: {{ .Values.containers.name }}
+      image: {{ .Values.containers.image }}
+      ports:
+       - containerPort: 80
